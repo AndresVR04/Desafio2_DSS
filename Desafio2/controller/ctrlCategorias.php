@@ -13,7 +13,7 @@
     if($accion == "registrarCat"){
         if(strlen($nombre)>0 && strlen($desc)>0){
             $consultas = new consultas;
-            if(!$consultas->valCat($cod_producto)){
+            if(!$consultas->valCat($cod_categoria)){
             $mensaje = null;
             $mensaje = $consultas->insertarCat($nombre, $desc);
             ?> 
@@ -63,7 +63,7 @@
     function mostrarC(){
         
         $consultas = new consultas();
-        $filas = $consultas->mostrarC();
+        $filas = $consultas->mostrarCategorias();
     ?>
         <div class="container">
         <h1>Productos Registrados</h1>

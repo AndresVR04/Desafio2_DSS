@@ -69,6 +69,27 @@
         header('location: ../views/verProductos.php?msg=Producto%20Eliminado%20Correctamente!!!');   
     }
 
+    function mostrarVentas(){
+        $consultas = new consultas();
+            $filas = $consultas->mostrarP();
+            foreach($filas as $datos){
+            ?>
+
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $datos['nombre'] ?></h5>
+                    <p class="card-text"><?= $datos['descripcion'] ?></p>
+                    <p class="card-text">$<?= $datos['precio'] ?></p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+        </div>
+            <?php
+            }
+
+    }
+
     function mostrarP(){
         
             $consultas = new consultas();
