@@ -20,16 +20,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
          <ul class="navbar-nav">
-            <li class="nav-item active">
-               <a class="nav-link" href="#">Inicio</a>
-            </li>
             <li class="nav-item">
-               <a class="nav-link" href="">Carrito de compras</a>
+               <a class="nav-link" href="#">Ventas</a>
             </li>
-            
          </ul>
       </div>
-      <a href="login.php"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerrar Sesión</button></a>
+      <a href="login.php"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Iniciar Sesión</button></a>
    </nav>
    <div class="container my-4">
     <h1 class="text-center">Bienvenido a TextilExport</h1>

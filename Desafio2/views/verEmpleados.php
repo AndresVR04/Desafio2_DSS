@@ -1,7 +1,7 @@
 <?php
     require_once "../model/classConexion.php";
     require_once "../model/classConsultas.php";
-    require_once "../controller/ctrlProductos.php";
+    require_once "../controller/ctrlUsuario.php";
     if(isset($_GET['msg'])){
         $msg = $_GET['msg'];
     }
@@ -10,7 +10,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Productos Registrados</title>
+  <title>Clientes Registrados</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -25,7 +25,7 @@
                <a class="nav-link" href="../views/index_admin.php">Inicio</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="verCategorias.php">Categorias</a>
+               <a class="nav-link" href="../views/verCategorias.php">Categorias</a>
             </li>
             <li class="nav-item">
                <a class="nav-link" href="../views/verProductos.php">Productos</a>
@@ -46,7 +46,7 @@
     ?>
 
 <?php 
-    mostrarP();
+    mostrarUsuarios("empleado");
 ?>
 </body>
 </html>

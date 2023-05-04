@@ -1,12 +1,15 @@
 <?php 
+    require_once "../model/classConexion.php";
+    require_once "../model/classConsultas.php";
+    require_once "../controller/ctrlProductos.php";
   $cabecera = $_GET['cabe']; 
   if(isset($_GET['msj'])){
     $msj = $_GET['msj'];
   }
+  $consultas = new consultas();
+  $datosCate = $consultas->mostrarCategorias();
   if($cabecera == 'Modificar Producto'){
-    require_once "../model/classConexion.php";
-    require_once "../model/classConsultas.php";
-    require_once "../controller/ctrlProductos.php";
+
     $cod = $_GET['cod'];
     $datos = mostrarDato($cod);
     foreach($datos as $dato){
@@ -30,18 +33,16 @@
        <label for="descripcion">Descripción:</label>
        <textarea class="form-control" id="descripcion" name="descripcion" rows="3" placeholder="Descripción del producto" >'.$des.'</textarea>
      </div>
-     <!-- <div class="form-group">
-       <label for="imagen">Imagen del producto:</label>
-       <input type="file" class="form-control-file" id="imagen" name="imagen" accept=".jpg, .png" required>
-     </div> -->
+
      <div class="form-group">
        <label for="categoria">Categoría:</label>
        <select class="form-control" id="categoria" name="categoria">
-         <option value="">Seleccione una categoría</option>
-         <option value="Electrónica">Electrónica</option>
-         <option value="Ropa">Ropa</option>
-         <option value="Hogar">Hogar</option>
-       </select>
+       <option value="">Seleccione una categoría</option>';
+       
+      foreach($datosCate as $nombreCat){
+        $info.= '<option value='.$nombreCat['nombre'].'>'.$nombreCat['nombre'].'</option>';
+      }
+      $info.= '</select>
      </div>
      <div class="form-group">
        <label for="precio">Precio:</label>
@@ -74,18 +75,15 @@
        <label for="descripcion">Descripción:</label>
        <textarea class="form-control" id="descripcion" name="descripcion" rows="3" placeholder="Descripción del producto" required></textarea>
      </div>
-     <!-- <div class="form-group">
-       <label for="imagen">Imagen del producto:</label>
-       <input type="file" class="form-control-file" id="imagen" name="imagen" accept=".jpg, .png" required>
-     </div> -->
+
      <div class="form-group">
        <label for="categoria">Categoría:</label>
        <select class="form-control" id="categoria" name="categoria">
-         <option value="">Seleccione una categoría</option>
-         <option value="Electrónica">Electrónica</option>
-         <option value="Ropa">Ropa</option>
-         <option value="Hogar">Hogar</option>
-       </select>
+         <option value="">Seleccione una categoría</option>';  
+         foreach($datosCate as $nombreCat){
+           $info.= '<option value='.$nombreCat['nombre'].'>'.$nombreCat['nombre'].'</option>';
+         }
+       $info.= '</select>
      </div>
      <div class="form-group">
        <label for="precio">Precio:</label>
@@ -126,7 +124,7 @@
                <a class="nav-link" href="../index.php">Inicio</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="#">Categorias</a>
+               <a class="nav-link" href=".verCategorias.php">Categorias</a>
             </li>
             <li class="nav-item">
                <a class="nav-link" href="../views/verProductos.php">Productos</a>

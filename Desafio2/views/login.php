@@ -40,7 +40,7 @@
       <button type="submit" name="login" class="btn btn-primary">Iniciar sesión</button>
    </form>
    <h5>¿No tienes una cuenta?</h5>
-   <a href="register.php"><button type="submit" name="register" class="btn btn-secondary">Registrarse</button></a>
+   <a href="formularioUsu.php?cabe=Registrar Usuario"><button type="submit" name="register" class="btn btn-secondary">Registrarse</button></a>
 </div>
 </body>
 </html>

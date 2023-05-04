@@ -24,9 +24,11 @@
                <a class="nav-link" href="#">Inicio</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="">Carrito de compras</a>
+               <a class="nav-link" href="../views/verProductos.php">Productos</a>
             </li>
-            
+            <li class="nav-item">
+               <a class="nav-link" href="#">Ventas</a>
+            </li>
          </ul>
       </div>
       <a href="login.php"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerrar Sesión</button></a>

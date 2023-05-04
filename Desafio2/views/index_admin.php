@@ -1,3 +1,9 @@
+<?php 
+     require_once "../model/classConexion.php";
+     require_once "../model/classConsultas.php";
+     require_once "../controller/ctrlProductos.php";
+       
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,12 +30,27 @@
                <a class="nav-link" href="../views/verProductos.php">Productos</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="#">Clientes</a>
+               <a class="nav-link" href="../views/verClientes.php">Clientes</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="../views/verEmpleados.php">Empleados</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="">Ventas</a>
             </li>
          </ul>
       </div>
       <a href="login.php"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerrar Sesión</button></a>
    </nav>
+   <div class="container my-4">
+    <h1 class="text-center">Bienvenido a TextilExport</h1>
+    <p class="lead text-center">Aquí podrás encontrar una gran variedad de productos a precios increíbles</p>
+    <div class="row">
+      <?php 
+         mostrarVentas();
+      ?>
+        </div>
+      </div>
 </body>
 
 </html>
