@@ -142,7 +142,7 @@
             }
         }
 
-        public function mostrarC(){
+        public function mostrarCategorias(){
             $rows = null;
             $db = new Conexion();
             $dbh = $db->getConexion();
